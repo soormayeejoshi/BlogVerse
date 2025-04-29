@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Let's Blog</title>
+
+  <!-- Fonts & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #FFE082, #FFAB40);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .login-container {
+      background: #FFF3E0;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .login-container h1 {
+      font-family: 'Playfair Display', serif;
+      color: #D84315;
+      margin-bottom: 25px;
+      font-size: 2.2rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #5D4037;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #FFAB91;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .form-group input:focus {
+      border-color: #FF5722;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #F57C00;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #E65100;
+    }
+
+    .login-container p {
+      margin-top: 15px;
+      font-size: 0.95rem;
+      color: #4E342E;
+    }
+
+    .login-container a {
+      color: #BF360C;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .login-container a:hover {
+      color: #8E0000;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Login</h1>
+    <form action="/login" method="POST">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required />
+      </div>
+      <button type="submit" class="btn">Login</button>
+    </form>
+    <p>Don't have an account? <a href="/createProfile">Register here</a></p>
+  </div>
+</body>
+</html>

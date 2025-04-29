@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(to right, #ffe8d6, #fff0e6);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 3rem;
+    }
+
+    .profile-container {
+      max-width: 700px;
+      margin: auto;
+      background-color: #ffffffcc;
+      border-radius: 15px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      padding: 2.5rem;
+    }
+
+    h1 {
+      color: #e85d04;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #444;
+      padding: 8px 0;
+    }
+
+    .blog-list {
+      margin-top: 1rem;
+      padding-left: 1rem;
+    }
+
+    .blog-list li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <h1>👤 Your Profile</h1>
+    <h2>Welcome, <%= user.username %>!</h2>
+    <p><strong>Email:</strong> <%= user.email %></p>
+    <p><strong>Number of blogs posted:</strong> <%= user.blogcount %></p>
+    <p><strong>Number of comments posted:</strong> <%= user.commentcount %></p>
+    <p><strong>Total likes:</strong> <%= user.likes %></p>
+
+    <p><strong>Your Blogs:</strong></p>
+    <ul class="blog-list">
+      <% user.blogs.forEach(blog => { %>
+        <li><%= blog.title %> - <em><%= new Date(blog.created_at).toLocaleDateString() %></em></li>
+      <% }) %>
+    </ul>
+  </div>
+</body>
+</html>
